@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 
 const config: {
   plugins: any[];
-  theme: { extend: { backgroundImage: { "gradient-conic": string; "gradient-radial": string }; colors: {"primary": string} } };
+  theme: { extend: { backgroundImage: { "gradient-conic": string; "gradient-radial": string }; colors: {"primary": string,secondary:string,tertiary:string} } };
   content: string[]
 } = {
   content: [
@@ -19,6 +19,8 @@ const config: {
       },
       colors: {
         primary: '#C7923E',
+        secondary: '#27343F',
+        tertiary: '#1A242D',
       },
     },
   },
