@@ -3,7 +3,7 @@ import Button from "./Button";
 const Header = () => {
   return (
       <>
-          <div className={"w-full relative flex py-2"}>
+          <div className={"w-full absolute top-0 flex py-2"}>
               <div className={"w-[57%] h-full px-10 flex justify-between items-center"}>
                   <Image src={"/logo.png"} alt={"Logo"} width={40} height={40}/>
                   <div className={""}>
