@@ -2,6 +2,7 @@ import Image from "next/image";
 import Dropdown from "@/components/DropDown";
 import Button from "@/components/Button";
 import Header from "@/components/header";
+import Header2 from "@/components/header2";
 
 const landingHeader = () => {
   return (
