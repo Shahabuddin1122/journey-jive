@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Button from "@/components/Button";
 
-const RoomComponent = ({image,text,price,guest,bed,washroom}:{image:string,text:string,price:string,guest:string,bed:string,washroom:string}) => {
+const RoomComponent = ({option,image,text,price,guest,bed,washroom}:{option?:number|boolean,image:string,text:string,price:string,guest:string,bed:string,washroom:string}) => {
   return (
       <>
-          <div className={"w-[350px] h-[440px] border-2 my-2"}>
+          <div className={`w-[350px] h-[440px] border-2 ${option && 'my-2'}`}>
               <div className={"w-full h-1/2 relative"}>
                   <Image src={image} alt={"restaurant"} fill objectFit={"cover"}/>
               </div>
@@ -25,7 +25,7 @@ const RoomComponent = ({image,text,price,guest,bed,washroom}:{image:string,text:
                       </div>
                   </div>
                   <div className={"w-full py-8 flex justify-between items-center"}>
-                      <Button text={"Learn more"}/>
+                      {option && <Button route={'/product/1'} text={"Learn more"}/>}
                       <div>
                           <p className={"text-secondary"}>Start From</p>
                           <p className={"text-2xl font-bold"}>{price}<span
