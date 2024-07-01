@@ -52,10 +52,10 @@ const landingHeader = () => {
                       <Dropdown text={"Guest"}/>
                       <Dropdown text={"Data"}/>
                       <Dropdown text={"Room type"}/>
-                      <Button text={"Booking Room"}/>
+                      <Button route={'/checkout'} text={"Booking Room"}/>
                   </div>
               </div>
-              <Header/>
+              <Header clickedItem={0}/>
           </div>
       </>
   );

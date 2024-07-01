@@ -53,7 +53,7 @@ const product = () => {
                         <Image src={"/hotel.jpg"} alt={"home"} fill objectFit={"cover"}/>
                     </div>
                 </div>
-                <Header/>
+                <Header clickedItem={1}/>
                 <div className={"w-11/12 h-[500px] my-10 flex"}>
                     <div className={"w-1/2 h-full bg-gray-200 relative"}>
                         <Image src={"/restaurant2.jpg"} alt={"restaurant"} fill objectFit={"cover"}/>
@@ -183,7 +183,7 @@ const product = () => {
                                     <p className={"text-4xl font-bold"}>$59<span
                                         className={"text-lg font-light text-secondary"}>/Night</span></p>
                                 </div>
-                                <Button text={"Booking now"} />
+                                <Button route={'/checkout'} text={"Booking now"} />
                             </div>
                         </div>
                     </div>
@@ -194,10 +194,10 @@ const product = () => {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat elit sed pretium, egestas sed sit.</p>
                     </div>
                     <div className={"w-full my-5 flex justify-center items-center gap-4"}>
-                        <RoomComponent image={"/restaurant4.jpg"} text={"Deluxe Double with New York City View"} price={'$67'} bed={"2"} guest={"3"} washroom={"2"} />
-                        <RoomComponent image={"/restaurant2.jpg"} text={"Deluxe Double with New York City View"} price={'$59'} bed={"2"} guest={"2"} washroom={"1"} />
-                        <RoomComponent image={"/restaurant3.jpg"} text={"Deluxe Double with New York City View"} price={'$20'} bed={"1"} guest={"1"} washroom={"1"} />
-                        <RoomComponent image={"/restaurant3.jpg"} text={"Deluxe Double with New York City View"} price={'$102'} bed={"3"} guest={"5"} washroom={"2"} />
+                        <RoomComponent option={1} image={"/restaurant4.jpg"} text={"Deluxe Double with New York City View"} price={'$67'} bed={"2"} guest={"3"} washroom={"2"} />
+                        <RoomComponent option={1} image={"/restaurant2.jpg"} text={"Deluxe Double with New York City View"} price={'$59'} bed={"2"} guest={"2"} washroom={"1"} />
+                        <RoomComponent option={1} image={"/restaurant3.jpg"} text={"Deluxe Double with New York City View"} price={'$20'} bed={"1"} guest={"1"} washroom={"1"} />
+                        <RoomComponent option={1} image={"/restaurant3.jpg"} text={"Deluxe Double with New York City View"} price={'$102'} bed={"3"} guest={"5"} washroom={"2"} />
                     </div>
                 </div>
 

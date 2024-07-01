@@ -37,11 +37,11 @@ const Explore = () => {
                         </div>
                     </div>
                     <div className={"w-full flex flex-wrap justify-center gap-4 items-center py-3"}>
-                        <RoomComponent image={"/restaurant2.jpg"} text={"Deluxe Double with New York City View"} price={'$59'} bed={"2"} guest={"2"} washroom={"1"} />
-                        <RoomComponent image={"/restaurant3.jpg"} text={"Deluxe Double with New York City View"} price={'$20'} bed={"1"} guest={"1"} washroom={"1"} />
-                        <RoomComponent image={"/restaurant3.jpg"} text={"Deluxe Double with New York City View"} price={'$102'} bed={"3"} guest={"5"} washroom={"2"} />
-                        <RoomComponent image={"/restaurant4.jpg"} text={"Deluxe Double with New York City View"} price={'$67'} bed={"2"} guest={"3"} washroom={"2"} />
-                        <RoomComponent image={"/restaurant4.jpg"} text={"Deluxe Double with New York City View"} price={'$67'} bed={"2"} guest={"3"} washroom={"2"} />
+                        <RoomComponent option={1} image={"/restaurant2.jpg"} text={"Deluxe Double with New York City View"} price={'$59'} bed={"2"} guest={"2"} washroom={"1"} />
+                        <RoomComponent option={1} image={"/restaurant3.jpg"} text={"Deluxe Double with New York City View"} price={'$20'} bed={"1"} guest={"1"} washroom={"1"} />
+                        <RoomComponent option={1} image={"/restaurant3.jpg"} text={"Deluxe Double with New York City View"} price={'$102'} bed={"3"} guest={"5"} washroom={"2"} />
+                        <RoomComponent option={1} image={"/restaurant4.jpg"} text={"Deluxe Double with New York City View"} price={'$67'} bed={"2"} guest={"3"} washroom={"2"} />
+                        <RoomComponent option={1} image={"/restaurant4.jpg"} text={"Deluxe Double with New York City View"} price={'$67'} bed={"2"} guest={"3"} washroom={"2"} />
                     </div>
                 </div>
                 <Footer/>

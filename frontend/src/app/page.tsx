@@ -23,7 +23,7 @@ export default function Home() {
                           egestas aliquam mi a arcu. Feugiat at dignissim massa ornare. Platea eu orci enim est egestas
                           fusce cras. Purus diam est vitae faucibus enim. Ultricies nunc vel magnis gravida quis
                           sodales. Lacus, elit pellentesque massa odio. Sed dictumst condimentum sit quis </p>
-                      <Button text={"Learn more"}/>
+                      <Button route={'/explore'} text={"Learn more"}/>
                   </div>
               </div>
           </div>
@@ -89,7 +89,7 @@ export default function Home() {
                               <p>Rolio Club</p>
                               <p>In Room Dinning</p>
                           </div>
-                          <Button text={"Learn more"}/>
+                          <Button route={'/explore'} text={"Learn more"}/>
                       </div>
                   </div>
                   <div className={"w-1/2 h-full bg-gray-400 relative"}>
@@ -111,7 +111,7 @@ export default function Home() {
                           fusce cras.</p>
                       <p className={"pb-3"}>Purus diam est vitae faucibus enim. Ultricies nunc vel magnis gravida quis
                           sodales. Lacus, elit pellentesque massa odio. Sed dictumst condimentum sit quis </p>
-                      <Button text={"Learn more"}/>
+                      <Button route={'/explore'} text={"Learn more"}/>
                   </div>
               </div>
           </div>
@@ -127,7 +127,7 @@ export default function Home() {
                               egestas fusce cras. </p>
                           <p className={"pb-3"}>Purus diam est vitae faucibus enim. Ultricies nunc vel magnis gravida
                               quis sodales. Lacus, elit pellentesque massa odio. Sed dictumst condimentum sit quis </p>
-                          <Button text={"Learn more"}/>
+                          <Button route={'/explore'} text={"Learn more"}/>
                       </div>
                   </div>
                   <div className={"w-1/2 h-full bg-gray-400 relative"}>
@@ -149,7 +149,7 @@ export default function Home() {
                           <p className={"text-white"}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat
                               elit sed pretium, egestas sed sit.</p>
                       </div>
-                      <Button text={"Open Instagram"}/>
+                      <Button route={'/explore'} text={"Open Instagram"}/>
                   </div>
               </div>
               <div className={"w-full h-full flex relative overflow-hidden"}>
