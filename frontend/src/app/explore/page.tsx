@@ -16,7 +16,7 @@ const Explore = () => {
 
             </div>
             <div className={"w-full relative mx-auto"}>
-                <Header2/>
+                <Header2 clickedItem={1}/>
                 <div className={" w-[95%]  mx-auto"}>
                     <div className={"w-[57%] h-[400px] flex flex-col justify-center"}>
                         <h1 className={"font-bold text-4xl text-white"}>Our Premium Room <br/> and Suites</h1>
