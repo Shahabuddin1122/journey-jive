@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Button from "./Button";
 import Link from "next/link";
-const newHeader = () => {
+const newHeader = ({clickedItem}:{clickedItem?:number}) => {
     return (
         <>
             <div className={"w-full top-0 flex py-2"}>
@@ -9,10 +9,10 @@ const newHeader = () => {
                     <Image src={"/logo.png"} alt={"Logo"} width={40} height={40}/>
                     <div className={""}>
                         <ul className={"flex justify-around items-center"}>
-                            <li className={"lg:text-[15px] md:text-[10px] px-6 text-gray-500"}><Link href={"/"}>Home</Link></li>
-                            <li className={'lg:text-[15px] md:text-[10px] px-6 text-primary'}><Link href={"/explore"}>Room & Suites</Link></li>
-                            <li className={'lg:text-[15px] md:text-[10px] px-6 text-gray-500'}>Restaurant & Bar</li>
-                            <li className={'lg:text-[15px] md:text-[10px] px-6 text-gray-500'}>Blog</li>
+                            <li className={"lg:text-[15px] md:text-[10px] px-6 text-white"}><Link href={"/"}>Home</Link></li>
+                            <li className={`lg:text-[15px] md:text-[10px] px-6 ${clickedItem == 1? "text-primary":"text-white"} `}><Link href={"/explore"}>Room & Suites</Link></li>
+                            <li className={'lg:text-[15px] md:text-[10px] px-6 text-white'}>Restaurant & Bar</li>
+                            <li className={`lg:text-[15px] md:text-[10px] px-6 ${clickedItem == 3? "text-primary":"text-white"} `}>Blog</li>
                         </ul>
                     </div>
                 </div>
