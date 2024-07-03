@@ -12,7 +12,7 @@ const Header = ({clickedItem}:{clickedItem?:number}) => {
                           <li className={`lg:text-[15px] md:text-[10px] px-6 ${clickedItem == 0 ? "text-primary":"text-gray-500"}`}><Link href={"/"}>Home</Link></li>
                           <li className={`lg:text-[15px] md:text-[10px] px-6 ${clickedItem == 1 ? "text-primary":"text-gray-500"}`}><Link href={"/explore"}>Room & Suites</Link></li>
                           <li className={`lg:text-[15px] md:text-[10px] px-6 ${clickedItem == 2 ? "text-primary":"text-gray-500"}`}>Restaurant & Bar</li>
-                          <li className={`lg:text-[15px] md:text-[10px] px-6 ${clickedItem == 3 ? "text-primary":"text-gray-500"}`}>Blog</li>
+                          <li className={`lg:text-[15px] md:text-[10px] px-6 ${clickedItem == 3 ? "text-primary":"text-gray-500"}`}><Link href={"/blog"}>Blog</Link></li>
                       </ul>
                   </div>
               </div>
