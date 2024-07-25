@@ -8,17 +8,17 @@ const Login = () => {
               <div className={"w-2/3 h-4/5 border border-black flex"}>
                   <div className={"w-1/2 h-full flex flex-wrap"}>
                       <div className={"w-1/3 h-1/4 bg-white"}></div>
-                      <div className={"w-1/3 h-1/4 bg-yellow-300"}></div>
-                      <div className={"w-1/3 h-1/4 bg-green-300"}></div>
-                      <div className={"w-1/3 h-1/4 bg-pink-300"}></div>
-                      <div className={"w-1/3 h-1/4 bg-violet-300"}></div>
-                      <div className={"w-1/3 h-1/4 bg-yellow-300"}></div>
-                      <div className={"w-1/3 h-1/4 bg-green-300"}></div>
+                      <div className={"w-1/3 h-1/4 bg-yellow-300 hover:bg-opacity-80"}></div>
+                      <div className={"w-1/3 h-1/4 bg-green-300 hover:bg-opacity-80"}></div>
+                      <div className={"w-1/3 h-1/4 bg-pink-300 hover:bg-opacity-80"}></div>
+                      <div className={"w-1/3 h-1/4 bg-violet-300 hover:bg-opacity-80"}></div>
+                      <div className={"w-1/3 h-1/4 bg-yellow-300 hover:bg-opacity-80"}></div>
+                      <div className={"w-1/3 h-1/4 bg-green-300 hover:bg-opacity-80"}></div>
                       <div className={"w-1/3 h-1/4 bg-white"}></div>
-                      <div className={"w-1/3 h-1/4 bg-violet-300"}></div>
-                      <div className={"w-1/3 h-1/4 bg-violet-300"}></div>
-                      <div className={"w-1/3 h-1/4 bg-yellow-300"}></div>
-                      <div className={"w-1/3 h-1/4 bg-pink-300"}></div>
+                      <div className={"w-1/3 h-1/4 bg-violet-300 hover:bg-opacity-80"}></div>
+                      <div className={"w-1/3 h-1/4 bg-violet-300 hover:bg-opacity-80"}></div>
+                      <div className={"w-1/3 h-1/4 bg-yellow-300 hover:bg-opacity-80"}></div>
+                      <div className={"w-1/3 h-1/4 bg-pink-300 hover:bg-opacity-80"}></div>
                   </div>
                   <div className={"w-1/2 h-full flex justify-center items-center"}>
                       <div className={"w-11/12 h-[90%]"}>
