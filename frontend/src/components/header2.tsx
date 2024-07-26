@@ -1,7 +1,12 @@
+"use client"
 import Image from "next/image";
 import Button from "./Button";
 import Link from "next/link";
-const newHeader = ({clickedItem}:{clickedItem?:number}) => {
+import {useSession} from "next-auth/react";
+import {useRouter} from "next/navigation";
+const NewHeader = ({clickedItem}:{clickedItem?:number}) => {
+    const {data:session} = useSession()
+    const router = useRouter();
     return (
         <>
             <div className={"w-full top-0 flex py-2"}>
@@ -18,10 +23,10 @@ const newHeader = ({clickedItem}:{clickedItem?:number}) => {
                 </div>
                 <div className={"w-[43%] pr-10 flex justify-end items-center"}>
                     <Image src={"/search.svg"} alt={"search"} height={20} width={20} className={"mr-4"}/>
-                    <Button route={'/explore'} text={'Booking Room'}/>
+                    {session ? <Button submitData={()=> router.push('/explore')} text={"Learn more"}/> : <Button submitData={()=> router.push('/login')} text={"Login"}/>}
                 </div>
             </div>
         </>
     )
 }
-export default newHeader;
+export default NewHeader;

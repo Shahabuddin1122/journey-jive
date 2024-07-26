@@ -5,7 +5,9 @@ import Footer from "@/components/footer";
 import Dropdown from "@/components/DropDown";
 import LandingHeader from "@/components/landingHeader";
 import RoomSuitesComponent from "@/components/RoomSuitesComponent";
+import {useSession} from "next-auth/react";
 export default function Home() {
+
   return (
       <>
           <LandingHeader/>
