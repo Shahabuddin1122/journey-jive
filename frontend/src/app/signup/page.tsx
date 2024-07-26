@@ -3,15 +3,25 @@
 import Image from "next/image";
 import Button from "@/components/Button";
 import {useState} from "react";
-import {signIn} from "next-auth/react";
+import axios from "axios";
+import {useRouter} from "next/navigation";
+
 
 const Signup = () => {
+    const router = useRouter()
     const [data,setData] = useState<user>({
         email: '',
         password: ''
     })
     const submitData = async ()=>{
-        console.log(data)
+        axios.post('http://localhost:8000/user/register',data)
+            .then((res)=>{
+                console.log(res.data)
+                router.push('/login')
+            })
+            .catch((error)=>{
+                console.error(error)
+        })
     }
     return (
         <>
