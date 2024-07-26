@@ -1,7 +1,23 @@
+"use client"
 import Image from "next/image";
 import Button from "@/components/Button";
+import {useState} from "react";
+import {signIn} from "next-auth/react";
 
 const Login = () => {
+    const [data,setData] = useState<user>({
+        email: '',
+        password: ''
+    })
+    const submitData = async ()=>{
+        console.log(data)
+        await signIn('credentials',{
+            email:data.email,
+            password:data.password,
+            redirect:true,
+            callbackUrl:"/"
+        })
+    }
   return (
       <>
           <div className={"w-full h-screen flex justify-center items-center"}>
@@ -36,16 +52,34 @@ const Login = () => {
                                   <div className={"py-1 w-full"}>
                                       <p className={"py-1"}>Email</p>
                                       <input placeholder={"Enter your email"}
+                                             type={'email'}
+                                             name={'email'}
+                                             value={data.email}
+                                             onChange={(e) => {
+                                                 setData({
+                                                     ...data,
+                                                     email: e.target.value
+                                                 })
+                                             }}
                                              className={"w-full rounded-sm px-2 py-1 text-sm border"}/>
                                   </div>
                                   <div className={"py-1 w-full"}>
                                       <p className={"py-1"}>Password</p>
-                                      <input placeholder={"Enter your password"} type={"password"}
+                                      <input placeholder={"Enter your password"}
+                                             type={"password"}
+                                             name={'password'}
+                                             value={data.password}
+                                             onChange={(e) => {
+                                                 setData({
+                                                     ...data,
+                                                     password: e.target.value
+                                                 })
+                                             }}
                                              className={"w-full rounded-sm px-2 py-1 text-sm border"}/>
                                   </div>
                                   <div className={"w-full py-1 flex justify-between items-center"}>
                                       <div className={"flex gap-1"}>
-                                          <input type={"checkbox"} className={""} />
+                                          <input type={"checkbox"} className={""}/>
                                           <p className={"text-sm"}>Remember me</p>
                                       </div>
                                       <div className={""}>
@@ -53,7 +87,7 @@ const Login = () => {
                                       </div>
                                   </div>
                                   <div className={"w-full flex flex-col my-4"}>
-                                      <Button text={"Login"} route={"/"} />
+                                  <Button text={"Login"} submitData={submitData} />
                                   </div>
                                   <div className={" flex justify-center"}>
                                       <p>Don&apos;t have any account?<span className={"text-primary pl-2"}>Sign up</span></p>

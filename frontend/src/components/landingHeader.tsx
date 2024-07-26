@@ -1,10 +1,13 @@
+
 import Image from "next/image";
 import Dropdown from "@/components/DropDown";
 import Button from "@/components/Button";
 import Header from "@/components/header";
 import Header2 from "@/components/header2";
+import {useSession} from "next-auth/react";
 
-const landingHeader = () => {
+const LandingHeader = () => {
+
   return (
       <>
           <div className={"min-w-[820px]"}>
@@ -60,4 +63,4 @@ const landingHeader = () => {
       </>
   );
 }
-export default landingHeader;
+export default LandingHeader;
