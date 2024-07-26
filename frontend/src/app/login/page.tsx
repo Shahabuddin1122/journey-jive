@@ -3,12 +3,14 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import {useState} from "react";
 import {signIn} from "next-auth/react";
+import {useRouter} from "next/navigation";
 
 const Login = () => {
     const [data,setData] = useState<user>({
         email: '',
         password: ''
     })
+    const router = useRouter()
     const submitData = async ()=>{
         console.log(data)
         await signIn('credentials',{
@@ -90,7 +92,7 @@ const Login = () => {
                                   <Button text={"Login"} submitData={submitData} />
                                   </div>
                                   <div className={" flex justify-center"}>
-                                      <p>Don&apos;t have any account?<span className={"text-primary pl-2"}>Sign up</span></p>
+                                      <p>Don&apos;t have any account?<span className={"text-primary pl-2 cursor-pointer"} onClick={()=> router.push('/signup')}>Sign up</span></p>
                                   </div>
                               </div>
                           </div>
