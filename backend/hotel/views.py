@@ -68,3 +68,12 @@ def add_hotel(request):
             return Response({'status': 'error', 'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     return Response("Invalid request method", status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+
+@api_view(['GET'])
+def get_individual_hotel(request, hotel_id):
+    hotel = Hotel.objects.get(id=hotel_id)
+    if hotel:
+        serializer = HotelSerializer(hotel)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response("Failed to get data", status=status.HTTP_400_BAD_REQUEST)
