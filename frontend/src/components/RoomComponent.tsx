@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 import {router} from "next/client";
 import {useRouter} from "next/navigation";
 
-const RoomComponent = ({option,image,text,price,guest,bed,washroom}:{option?:number|boolean,image:string,text:string,price:string,guest:string,bed:string,washroom:string}) => {
+const RoomComponent = ({option,image,text,price,guest,bed,washroom,link}:{option?:number|boolean,image:string,text:string,price:number,guest:number,bed:number,washroom:number,link?:bigint}) => {
     const router = useRouter()
     return (
       <>
@@ -28,11 +28,11 @@ const RoomComponent = ({option,image,text,price,guest,bed,washroom}:{option?:num
                           <p className={"text-slate-400"}>{washroom} Washroom</p>
                       </div>
                   </div>
-                  <div className={"w-full py-8 flex justify-between items-center"}>
-                      {option && <Button submitData={()=>router.push('/product/1')} text={"Learn more"}/>}
+                  <div className={"w-full pt-8 flex justify-between items-center"}>
+                      {option && <Button submitData={()=>router.push(`/product/${link}`)} text={"Learn more"}/>}
                       <div>
                           <p className={"text-secondary"}>Start From</p>
-                          <p className={"text-2xl font-bold"}>{price}<span
+                          <p className={"text-2xl font-bold"}>${price}<span
                               className={"text-sm font-light text-secondary"}>/Night</span></p>
                       </div>
                   </div>
