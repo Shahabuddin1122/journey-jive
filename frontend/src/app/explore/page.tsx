@@ -1,3 +1,4 @@
+"use client"
 import Header from "@/components/header";
 import Image from "next/image";
 import Header2 from "@/components/header2";
@@ -5,8 +6,19 @@ import Dropdown from "@/components/DropDown";
 import Button from "@/components/Button";
 import RoomComponent from "@/components/RoomComponent";
 import Footer from "@/components/footer";
+import axios from "axios";
+import {useState} from "react";
 
 const Explore = () => {
+    const [data,setData] = useState<Hotel[]>([])
+    axios.get('http://localhost:8000/hotel/get-all-hotel')
+        .then((res)=>{
+            setData(res.data)
+        })
+        .catch((err)=>{
+            console.error(err);
+    })
+
     return (
         <>
             <div className={"w-full absolute"}>
@@ -37,11 +49,9 @@ const Explore = () => {
                         </div>
                     </div>
                     <div className={"w-full flex flex-wrap justify-center gap-4 items-center py-3"}>
-                        <RoomComponent option={1} image={"/restaurant2.jpg"} text={"Deluxe Double with New York City View"} price={'$59'} bed={"2"} guest={"2"} washroom={"1"} />
-                        <RoomComponent option={1} image={"/restaurant3.jpg"} text={"Deluxe Double with New York City View"} price={'$20'} bed={"1"} guest={"1"} washroom={"1"} />
-                        <RoomComponent option={1} image={"/restaurant3.jpg"} text={"Deluxe Double with New York City View"} price={'$102'} bed={"3"} guest={"5"} washroom={"2"} />
-                        <RoomComponent option={1} image={"/restaurant4.jpg"} text={"Deluxe Double with New York City View"} price={'$67'} bed={"2"} guest={"3"} washroom={"2"} />
-                        <RoomComponent option={1} image={"/restaurant4.jpg"} text={"Deluxe Double with New York City View"} price={'$67'} bed={"2"} guest={"3"} washroom={"2"} />
+                        {data && data.map((value,index)=>{
+                            return <RoomComponent key={value.id} link={value.id} option={1} image={`data:image/jpeg;base64,${value.hotel_image.heroImage}`} text={value.name} price={value.price_per_room} bed={value.bed_per_room} guest={value.guest_per_room} washroom={value.guest_per_room} />
+                        })}
                     </div>
                 </div>
                 <Footer/>
