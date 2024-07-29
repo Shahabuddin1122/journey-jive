@@ -3,21 +3,13 @@ import Header from "@/components/header";
 import Image from "next/image";
 import Header2 from "@/components/header2";
 import Dropdown from "@/components/DropDown";
-import Button from "@/components/Button";
+import {useQuery} from "react-query";
 import RoomComponent from "@/components/RoomComponent";
 import Footer from "@/components/footer";
-import axios from "axios";
-import {useState} from "react";
+import fetcher from "@/utils/fetcher"
 
 const Explore = () => {
-    const [data,setData] = useState<Hotel[]>([])
-    axios.get('http://localhost:8000/hotel/get-all-hotel')
-        .then((res)=>{
-            setData(res.data)
-        })
-        .catch((err)=>{
-            console.error(err);
-    })
+    const { isLoading, data, error } = useQuery('products', fetcher);
 
     return (
         <>
@@ -49,7 +41,7 @@ const Explore = () => {
                         </div>
                     </div>
                     <div className={"w-full flex flex-wrap justify-center gap-4 items-center py-3"}>
-                        {data && data.map((value,index)=>{
+                        {!isLoading && !error && data && data.map((value,index)=>{
                             return <RoomComponent key={value.id} link={value.id} option={1} image={`data:image/jpeg;base64,${value.hotel_image.heroImage}`} text={value.name} price={value.price_per_room} bed={value.bed_per_room} guest={value.guest_per_room} washroom={value.guest_per_room} />
                         })}
                     </div>
