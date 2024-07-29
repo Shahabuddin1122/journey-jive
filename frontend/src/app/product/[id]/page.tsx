@@ -9,26 +9,25 @@ import RoomComponent from "@/components/RoomComponent";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import Calender from "@/components/calender";
-import {da} from "date-fns/locale";
+import fetcher from "@/utils/fetcher"
+import {useQuery} from "react-query";
+
+const fetchHotel = async (productId) => {
+    const response = await axios.get(`http://localhost:8000/hotel/get-indivisual-hotel/${productId}`);
+    return response.data;
+};
 
 const Product = ({params}) => {
     const productId = params.id;
-    const [data,setData] = useState<Hotel>(null)
     const [selectedDate,setSelectedDate] = useState<string>('')
 
     const dateSelector = (date)=>{
         setSelectedDate(date);
     }
+    const { isLoading, data, error } = useQuery(['product', productId], () => fetchHotel(productId), {
+        enabled: !!productId,
+    });
 
-    useEffect(() => {
-        axios.get(`http://localhost:8000/hotel/get-indivisual-hotel/${productId}`)
-            .then((res)=>{
-                setData(res.data)
-            })
-            .catch((err)=>{
-                console.error(err);
-            })
-    }, [data]);
     return (
         <>
             <div>
